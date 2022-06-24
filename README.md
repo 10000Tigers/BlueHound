@@ -22,6 +22,16 @@ BlueHound 是一款GUI版本主机威胁狩猎工具。支持上机/离线扫描
 - **Beacon** - 扫描进程内存中可能存在的CobaltStrike的beacon程序
 - **MemHunter** - 扫描进程内存，导出存在可疑注入内容的内存dmp文件
 
+
+
+## 使用方法
+
+1. 拷贝整个文件夹至需要调查的主机上
+2. 以管理员权限启动“BlueHound.exe”
+3. 按需选择要调查项目
+
+
+
 ## 检测效果
 
 ### WebShell
