@@ -76,6 +76,10 @@ MemHunter主要扫描进程内存中是否被注入可疑PE文件，如果是会
 
 ![image-20220617110001229](img/cs-parser2.png)
 
+转储文件拖至IDA分析
+
+![ida](img/ida.png)
+
 ## Q&A
 
 Q：一些正常文件、进程被扫出来威胁？
