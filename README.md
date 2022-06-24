@@ -25,7 +25,7 @@ BlueHound 是一款GUI版本主机威胁狩猎工具。支持上机/离线扫描
 
 ### WebShell
 
-![image-20220616190101779](C:\Users\douwanhu\AppData\Roaming\Typora\typora-user-images\image-20220616190101779.png)
+![image-20220616190101779](img/webshell.png)
 
 出于威胁狩猎的目的，所以检测特征写的比较宽泛，在使用过程中可能会出现一些误报。
 
