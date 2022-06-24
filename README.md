@@ -1,15 +1,16 @@
 # BlueHound![bluehound](img/bluehound.png)
 
-BlueHound 是一款GUI版本主机威胁狩猎工具。支持上机/离线扫描webshell、CobaltStrike的beacon程序扫描以及内存扫描。
+BlueHound 是一款GUI版本主机威胁狩猎工具。支持上机/离线扫描webshell、CobaltStrike的beacon程序扫描以及内存扫描，基于.NET 4.6编译。
 
 ## 支持系统
 
 - **Windows 10 x64**
-- **Windows 7 x64**
 
+- **Windows Server 2012 R2 x64及以上**
 
+- **其他安装了.NET framework 4.6及以上的x64位操作系统**
 
-
+  
 
 ## 简介
 
