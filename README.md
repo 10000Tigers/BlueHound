@@ -35,53 +35,51 @@ Beacon选项主要扫描进程内存中可能存在的CobaltStrike beacon程序�
 
 #### Stage
 
-![image-20220617174225321](img/beaconeye-stage.png)
+![image-20220617174225321](img/beaconeye-satge.png)
 
-![image-20220617174332711](C:\Users\douwanhu\AppData\Roaming\Typora\typora-user-images\image-20220617174332711.png)
+![image-20220617174332711](img/hound-c2.png)
 
 BeaconEye扫描被绕过，但是自研的增强beacon扫描功能扫描出了C2 profile特征，并导出了C2 profile所在的内存为dmp文件。可以用十六进制编辑器打开dmp文件后使用cyberchef做异或解密，如上图BlueHound会给出异或的key,本例中为`0x2e`
 
-![image-20220617101015259](C:\Users\douwanhu\AppData\Roaming\Typora\typora-user-images\image-20220617101015259.png)
+![image-20220617101015259](img/hxd.png)
 
-![image-20220617101045137](C:\Users\douwanhu\AppData\Roaming\Typora\typora-user-images\image-20220617101045137.png)
+![image-20220617101045137](img/cyberchef.png)
 
 或者使用开源工具[CobaltStrikeParser](https://github.com/Sentinel-One/CobaltStrikeParser)解析导出的dmp文件
 
-![image-20220617102009171](C:\Users\douwanhu\AppData\Roaming\Typora\typora-user-images\image-20220617102009171.png)
+![image-20220617102009171](img/cs-parser.png)
 
 PS：如果BlueHound扫描出来的异或key不是`0x2e`那么需要按需修改CobaltStrikeParser里的脚本进行适配
 
 #### Stageless
 
-![image-20220617174458213](C:\Users\douwanhu\AppData\Roaming\Typora\typora-user-images\image-20220617174458213.png)
+![image-20220617174458213](img/beaconeye-stageless.png)
 
 对于stageless的beacon会扫描进程内存空间狩猎符合beacon程序内存特征的进程
 
-![image-20220617174653791](C:\Users\douwanhu\AppData\Roaming\Typora\typora-user-images\image-20220617174653791.png)
+![image-20220617174653791](img/hound-stageless.png)
 
 ### MemHunter
 
 MemHunter主要扫描进程内存中是否被注入可疑PE文件，如果是会dump出可疑文件所在内存dmp文件供分析。还是用绕过了上述扫描手段的beacon程序为例。
 
-![image-20220617104314501](C:\Users\douwanhu\AppData\Roaming\Typora\typora-user-images\image-20220617104314501.png)
+![image-20220617104314501](img/mem-1.png)
 
-![image-20220617104354928](C:\Users\douwanhu\AppData\Roaming\Typora\typora-user-images\image-20220617104354928.png)
+![image-20220617104354928](img/mem-2.png)
 
 
 
 #### Inject
 
-![image-20220617105850721](C:\Users\douwanhu\AppData\Roaming\Typora\typora-user-images\image-20220617105850721.png)
+![image-20220617105850721](img/inject.png)
 
-![image-20220617110001229](C:\Users\douwanhu\AppData\Roaming\Typora\typora-user-images\image-20220617110001229.png)
+![image-20220617110001229](img/cs-parser2.png)
 
 ## Q&A
 
 Q：一些正常文件、进程被扫出来威胁？
 
-A：由于是威胁狩猎工具，所以会存在一些误报，总体来说误报还是比较可控的
-
-
+A：由于是威胁狩猎工具，所以会存在一些误报，总体来说除了webshell扫描模块，误报还是比较可控的
 
 
 
@@ -89,4 +87,4 @@ A：由于是威胁狩猎工具，所以会存在一些误报，总体来说误�
 
 - 命令行版本
 - 支持syslog外发告警信息
-- MemHunter导出PE文件自动修复IAT
+- MemHunter导出PE文件时自动修复IAT
